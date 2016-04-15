@@ -1,0 +1,16 @@
+PODS:
+  - Alamofire (3.3.1)
+  - EPContactsPicker (1.0.2)
+  - EVContactsPicker (0.1.32)
+
+DEPENDENCIES:
+  - Alamofire
+  - EPContactsPicker
+  - EVContactsPicker
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  EPContactsPicker: 38fcb880893b08df10758adb0941ea7e712b892a
+  EVContactsPicker: 06a620fd67dffeea2776e75fc5acca86cd981c47
+
+COCOAPODS: 0.39.0
