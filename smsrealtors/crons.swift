@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class crons {
-    var crons_id: UInt!
+    var crons_id: Int!
     var user_id: UInt!
     var date: NSDate!
     var text: String!
@@ -21,7 +21,7 @@ class crons {
     var hour: String!
     var monthly: String!
     
-    init(crons_id: UInt, user_id: UInt, date: NSDate, text: String, totype: String, time: String, title: String, hour: String, monthly: String) {
+    init(crons_id: Int, user_id: UInt, date: NSDate, text: String, totype: String, time: String, title: String, hour: String, monthly: String) {
         
         self.crons_id = crons_id
         self.user_id = user_id

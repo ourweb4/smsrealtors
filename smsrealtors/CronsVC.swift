@@ -31,19 +31,21 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
                     let rows = resultSets![0]
                     
                     for row in rows {
+                       // print(row["crons_id"])
+                        let crons_id = (row["crons_id"] as! Int)
+                        let date = (row["date"] as? NSDate)!
+                        let text = (row["text"] as? String)!
+                        let totype = (row["totype"] as? String)!
+                        let time = (row["time"] as? Int)!
+                        let title = (row["title"])!
                         
-                        let crons_id = (row["cron_id"] as! UInt)
-                        let date = (row["date"] as! NSDate)
-                        let text = (row["text"] as! String)
-                        let totype = (row["totype"] as! String)
-                        let time = (row["time"] as! String)
-                        let title = (row["title"] as! String)
-                        let hour = (row["hour"] as! String)
-                        let monthly = (row["monthly"] as! String)
+                        let hour = (row["hour"] as? Int)!
+                       //let monthly = (row["monthly"] as? Int)!
                         
                         
                         
-                        let addcrons = crons(crons_id: crons_id, user_id: user_id, date: date, text: text, totype: totype, time: time, title: title, hour: hour, monthly: monthly)
+                        let addcrons = crons(crons_id: crons_id, user_id: user_id, date: date, text: text, totype: totype, time:
+                            "\(time)", title: "\(title)", hour: "\(hour)", monthly: "")
                         
                         cronslist.append(addcrons)
                         
@@ -81,7 +83,7 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        loadcrons()
         
     }
     
@@ -96,7 +98,7 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         askit("Delete", message: "Are you sure?", cron: cronslist[indexPath.row])
-        
+        loadcrons()
     }
     
     
@@ -113,7 +115,7 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let yes = UIAlertAction(title: "Yes", style: .Default, handler: { action in
             cron.delete()
-            self.loadcrons()
+            
             
             }
         )
