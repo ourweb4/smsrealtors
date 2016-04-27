@@ -15,6 +15,26 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     @IBOutlet var tableview: UITableView!
     
+    func sortcrons() {
+        
+        for var x = 0; x < cronslist.count - 1; x++ {
+            for var y = x + 1; y < cronslist.count; y++ {
+                let datex = cronslist[x].date
+                let datey = cronslist[y].date
+                
+                if datex.compare(datey) == .OrderedAscending {
+                    let temp = cronslist[y]
+                    cronslist[y] = cronslist[x]
+                    cronslist[x] = temp
+                    
+                }
+                
+                
+            }
+        }
+        
+    }
+    
     func loadcrons() {
         
         let user_id = userdata.user_id
@@ -57,6 +77,7 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
                 
             }
             closedb()
+            sortcrons()
             tableview.reloadData()
         }
     }
@@ -98,7 +119,7 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         askit("Delete", message: "Are you sure?", cron: cronslist[indexPath.row])
-        loadcrons()
+        //loadcrons()
     }
     
     
@@ -115,7 +136,7 @@ class CronsVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let yes = UIAlertAction(title: "Yes", style: .Default, handler: { action in
             cron.delete()
-            
+            self.loadcrons()
             
             }
         )

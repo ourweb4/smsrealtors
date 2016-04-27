@@ -3,7 +3,7 @@
 //  smsrealtors
 //
 //  Created by Bill Banks on 2/22/16.
-//  Update on 3/30/16
+//  Update on 4/27/16
 //  Copyright © 2016 Bill Banks. All rights reserved.
 //
 
@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var versoinTXT: UILabel!
     @IBOutlet var tableview: UITableView!
     
+    @IBOutlet var messagestxt: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -102,13 +103,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let version: String = NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String
         
         self.versoinTXT.text = "Ver \(version)"
+        self.messagestxt.text = ""
         
         if let email = NSUserDefaults.standardUserDefaults().valueForKey("email") as? String {
             if let pwd = NSUserDefaults.standardUserDefaults().valueForKey("pwd") as? String {
                 userdata.email = email
                 userdata.pass = pwd
                 if userdata.logon() {
-                    
+                  self.messagestxt.text = "Message Left: \(userdata.leftmsg)"
                 }
                 
             }

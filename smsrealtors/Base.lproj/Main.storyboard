@@ -165,15 +165,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLm-7I-QVi">
+                                <rect key="frame" x="279" y="41" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YG2-e6-KmP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="5YE-mh-vxm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="YG2-e6-KmP" secondAttribute="trailing" constant="-13" id="NMv-m0-kKS"/>
+                            <constraint firstItem="YG2-e6-KmP" firstAttribute="top" secondItem="PLm-7I-QVi" secondAttribute="bottom" constant="2" id="NrI-PK-5J6"/>
+                            <constraint firstItem="PLm-7I-QVi" firstAttribute="top" secondItem="PpU-EQ-MMQ" secondAttribute="bottom" id="QVa-I9-PGO"/>
                             <constraint firstItem="YG2-e6-KmP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-12" id="RDV-mP-BUm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YG2-e6-KmP" secondAttribute="bottom" constant="50" id="UOo-g8-XjH"/>
                             <constraint firstItem="PpU-EQ-MMQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cDL-j2-T4R"/>
                             <constraint firstItem="PpU-EQ-MMQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="krl-hN-cEj"/>
+                            <constraint firstItem="PLm-7I-QVi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kt3-1A-4Kn"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -206,6 +215,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="messagestxt" destination="PLm-7I-QVi" id="aU6-BB-ScT"/>
                         <outlet property="tableview" destination="YG2-e6-KmP" id="w5a-RE-kf4"/>
                         <outlet property="versoinTXT" destination="PpU-EQ-MMQ" id="o5Y-cz-rkb"/>
                         <segue destination="G52-0y-aid" kind="show" identifier="loadlogon" animates="NO" id="bDq-7R-3aU"/>
