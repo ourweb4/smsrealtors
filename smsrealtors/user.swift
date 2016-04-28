@@ -143,4 +143,27 @@ class user:NSObject, NSCoding {
         
         return logon()
     }
-}
+
+    func updatecredits(credits:  Int) {
+        
+        logon()
+        self.leftmsg = credits + self.leftmsg
+        
+        
+        let urlstr  = "\(REF_UPDATECREDITS_URL)user_id=\(self.email)&pwd=\(self.pass)"
+        
+        Alamofire.request(.GET, urlstr, parameters: ["credits": self.leftmsg])
+        
+        
+    }
+ 
+ 
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

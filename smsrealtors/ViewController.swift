@@ -32,7 +32,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         getcredits()
         
         if creditslist.count == 0 {
-            
+            createCredits("1,000 SMS Credits", product_id: "net.ourweb.smsrealtors1.sms1", credits: 1000)
+            createCredits("5,000 SMS Credits", product_id: "net.ourweb.smsrealtors1.sms2", credits: 5000)
+            createCredits("10,000 SMS Credits", product_id: "net.ourweb.smsrealtors3.sms1", credits: 10000)
+            createCredits("25,000 SMS Credits", product_id: "net.ourweb.smsrealtors1.sms4", credits: 25000)
+            getcredits()
         }
 
     

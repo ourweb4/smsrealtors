@@ -43,6 +43,8 @@
 		8199307A1C848DF000BA2A34 /* membercell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819930791C848DF000BA2A34 /* membercell.swift */; };
 		81B7A4811CD14DB40015F7C0 /* Credits+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7A47F1CD14DB40015F7C0 /* Credits+CoreDataProperties.swift */; };
 		81B7A4821CD14DB40015F7C0 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7A4801CD14DB40015F7C0 /* Credits.swift */; };
+		81B7A4841CD270490015F7C0 /* BuyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7A4831CD270490015F7C0 /* BuyVC.swift */; };
+		81B7A4861CD2923F0015F7C0 /* productcell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7A4851CD2923F0015F7C0 /* productcell.swift */; };
 		81E508CB1CAB53EC00CE2136 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E508CA1CAB53EC00CE2136 /* iAd.framework */; };
 		81EEE8FD1C9DA7370002C2F7 /* registerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEE8FC1C9DA7370002C2F7 /* registerVC.swift */; };
 		9F357B094326A4BF43B0F7A9 /* Pods_smsrealtors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10B08EAA7AB8DC444B50C00 /* Pods_smsrealtors.framework */; };
@@ -88,6 +90,8 @@
 		81B7A47A1CD1293B0015F7C0 /* smsrealtors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = smsrealtors.entitlements; sourceTree = "<group>"; };
 		81B7A47F1CD14DB40015F7C0 /* Credits+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Credits+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		81B7A4801CD14DB40015F7C0 /* Credits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
+		81B7A4831CD270490015F7C0 /* BuyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BuyVC.swift; path = Assets.xcassets/BuyVC.swift; sourceTree = "<group>"; };
+		81B7A4851CD2923F0015F7C0 /* productcell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = productcell.swift; sourceTree = "<group>"; };
 		81E508CA1CAB53EC00CE2136 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		81EEE8FC1C9DA7370002C2F7 /* registerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerVC.swift; sourceTree = "<group>"; };
 		B10B08EAA7AB8DC444B50C00 /* Pods_smsrealtors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smsrealtors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,9 +165,9 @@
 		81072FAF1C7BE1D400E1DD70 /* smsrealtors */ = {
 			isa = PBXGroup;
 			children = (
-				81B7A47A1CD1293B0015F7C0 /* smsrealtors.entitlements */,
-				81072FB01C7BE1D400E1DD70 /* AppDelegate.swift */,
 				810F03181C99DE0300D6BD01 /* const.swift */,
+				81072FB01C7BE1D400E1DD70 /* AppDelegate.swift */,
+				81B7A47A1CD1293B0015F7C0 /* smsrealtors.entitlements */,
 				81072FC71C7BE58100E1DD70 /* models */,
 				81072FC51C7BE37B00E1DD70 /* views */,
 				81072FBF1C7BE1D400E1DD70 /* Info.plist */,
@@ -177,8 +181,10 @@
 			isa = PBXGroup;
 			children = (
 				81072FB41C7BE1D400E1DD70 /* Main.storyboard */,
+				81B7A4851CD2923F0015F7C0 /* productcell.swift */,
 				819930791C848DF000BA2A34 /* membercell.swift */,
 				81566FDC1CB7F22800EE37D6 /* croncell.swift */,
+				81072FBC1C7BE1D400E1DD70 /* LaunchScreen.storyboard */,
 				81072FC61C7BE45400E1DD70 /* controllers */,
 			);
 			name = views;
@@ -191,10 +197,10 @@
 				8173F4C31C7E91A1008DE327 /* loginVC.swift */,
 				81072FB21C7BE1D400E1DD70 /* ViewController.swift */,
 				8108EE931C9AF59B007BA3D1 /* memberVC.swift */,
-				81072FBC1C7BE1D400E1DD70 /* LaunchScreen.storyboard */,
 				81EEE8FC1C9DA7370002C2F7 /* registerVC.swift */,
 				8113F97A1CA9628700A2DDA0 /* SmsmemberVC.swift */,
 				81566FDA1CB6D51B00EE37D6 /* CronsVC.swift */,
+				81B7A4831CD270490015F7C0 /* BuyVC.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -364,6 +370,7 @@
 				3BC37B4B1C948F5A00C0B9E7 /* Statement.swift in Sources */,
 				8113F97B1CA9628700A2DDA0 /* SmsmemberVC.swift in Sources */,
 				3BC37B481C948F5A00C0B9E7 /* Result.swift in Sources */,
+				81B7A4841CD270490015F7C0 /* BuyVC.swift in Sources */,
 				818BDBFA1C80E8D40085A0BE /* My_members+CoreDataProperties.swift in Sources */,
 				8108EE941C9AF59B007BA3D1 /* memberVC.swift in Sources */,
 				3BC37B411C948F5A00C0B9E7 /* Connection.swift in Sources */,
@@ -383,6 +390,7 @@
 				3BC37B4A1C948F5A00C0B9E7 /* Socket.swift in Sources */,
 				8173F4BE1C7DFCA6008DE327 /* mysqlconn.swift in Sources */,
 				3BC37B491C948F5A00C0B9E7 /* sha1.swift in Sources */,
+				81B7A4861CD2923F0015F7C0 /* productcell.swift in Sources */,
 				81072FB91C7BE1D400E1DD70 /* smsrealtors.xcdatamodeld in Sources */,
 				3BC37B421C948F5A00C0B9E7 /* ConnectionPool.swift in Sources */,
 				8173F4C41C7E91A1008DE327 /* loginVC.swift in Sources */,
