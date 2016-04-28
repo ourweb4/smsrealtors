@@ -8,6 +8,8 @@
 //
 
 import UIKit
+import CoreData
+
 //import MySqlSwiftNative
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -15,6 +17,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //var userdata: user!
     
     var memberlist = [members]()
+    var creditslist = [Credits]()
 
     
     @IBOutlet var versoinTXT: UILabel!
@@ -26,9 +29,49 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self
-//        userdata = user()
+        getcredits()
+        
+        if creditslist.count == 0 {
+            
+        }
+
     
+    }
     
+    func createCredits(title: String, product_id: String, credits: Int) {
+        let appdel = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let context = appdel.managedObjectContext
+        
+        if let rec = NSEntityDescription.entityForName("Credits", inManagedObjectContext: context) {
+            let ins = NSManagedObject(entity: rec, insertIntoManagedObjectContext: context) as! Credits
+            ins.title = title
+            ins.product_id = product_id
+            ins.credits =  credits
+            
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            
+        }
+    }
+    
+    func getcredits() {
+        
+        let appdel = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let context = appdel.managedObjectContext
+        let fetch = NSFetchRequest(entityName: "Credits")
+        
+        do {
+            let credits_arr = try context.executeFetchRequest(fetch)
+            creditslist = credits_arr as! [Credits]
+        } catch {}
+        
+        
+        
     }
     
     func loadmembers() {

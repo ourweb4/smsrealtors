@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Credits" representedClassName=".Credits" syncable="YES">
+        <attribute name="credits" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="product_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="My_members" representedClassName=".My_members" syncable="YES">
         <attribute name="cell" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="member_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -9,5 +14,6 @@
     </entity>
     <elements>
         <element name="My_members" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Credits" positionX="-63" positionY="18" width="128" height="90"/>
     </elements>
 </model>

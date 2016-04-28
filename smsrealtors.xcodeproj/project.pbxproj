@@ -41,6 +41,8 @@
 		818BDBFB1C80E8D40085A0BE /* My_members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BDBF91C80E8D40085A0BE /* My_members.swift */; };
 		818BDBFD1C80EA8F0085A0BE /* members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818BDBFC1C80EA8F0085A0BE /* members.swift */; };
 		8199307A1C848DF000BA2A34 /* membercell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819930791C848DF000BA2A34 /* membercell.swift */; };
+		81B7A4811CD14DB40015F7C0 /* Credits+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7A47F1CD14DB40015F7C0 /* Credits+CoreDataProperties.swift */; };
+		81B7A4821CD14DB40015F7C0 /* Credits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B7A4801CD14DB40015F7C0 /* Credits.swift */; };
 		81E508CB1CAB53EC00CE2136 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E508CA1CAB53EC00CE2136 /* iAd.framework */; };
 		81EEE8FD1C9DA7370002C2F7 /* registerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EEE8FC1C9DA7370002C2F7 /* registerVC.swift */; };
 		9F357B094326A4BF43B0F7A9 /* Pods_smsrealtors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B10B08EAA7AB8DC444B50C00 /* Pods_smsrealtors.framework */; };
@@ -83,6 +85,9 @@
 		818BDBF91C80E8D40085A0BE /* My_members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = My_members.swift; sourceTree = "<group>"; };
 		818BDBFC1C80EA8F0085A0BE /* members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = members.swift; sourceTree = "<group>"; };
 		819930791C848DF000BA2A34 /* membercell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = membercell.swift; sourceTree = "<group>"; };
+		81B7A47A1CD1293B0015F7C0 /* smsrealtors.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = smsrealtors.entitlements; sourceTree = "<group>"; };
+		81B7A47F1CD14DB40015F7C0 /* Credits+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Credits+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		81B7A4801CD14DB40015F7C0 /* Credits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credits.swift; sourceTree = "<group>"; };
 		81E508CA1CAB53EC00CE2136 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		81EEE8FC1C9DA7370002C2F7 /* registerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registerVC.swift; sourceTree = "<group>"; };
 		B10B08EAA7AB8DC444B50C00 /* Pods_smsrealtors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smsrealtors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +111,6 @@
 		183A12B56E9A9AB205931F89 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				81072FB71C7BE1D400E1DD70 /* smsrealtors.xcdatamodeld */,
 				81072FAE1C7BE1D400E1DD70 /* Products */,
 				BFBA83CF83E6F7DAA6D92AF1 /* Frameworks */,
 				F6218B6C9976D8938CBA1E10 /* Pods-smsrealtors.debug.xcconfig */,
@@ -157,12 +161,13 @@
 		81072FAF1C7BE1D400E1DD70 /* smsrealtors */ = {
 			isa = PBXGroup;
 			children = (
+				81B7A47A1CD1293B0015F7C0 /* smsrealtors.entitlements */,
 				81072FB01C7BE1D400E1DD70 /* AppDelegate.swift */,
 				810F03181C99DE0300D6BD01 /* const.swift */,
 				81072FC71C7BE58100E1DD70 /* models */,
 				81072FC51C7BE37B00E1DD70 /* views */,
-				81072FC61C7BE45400E1DD70 /* controllers */,
 				81072FBF1C7BE1D400E1DD70 /* Info.plist */,
+				81072FB71C7BE1D400E1DD70 /* smsrealtors.xcdatamodeld */,
 				8173F4BD1C7DFCA6008DE327 /* mysqlconn.swift */,
 			);
 			path = smsrealtors;
@@ -172,8 +177,9 @@
 			isa = PBXGroup;
 			children = (
 				81072FB41C7BE1D400E1DD70 /* Main.storyboard */,
-				81566FDC1CB7F22800EE37D6 /* croncell.swift */,
 				819930791C848DF000BA2A34 /* membercell.swift */,
+				81566FDC1CB7F22800EE37D6 /* croncell.swift */,
+				81072FC61C7BE45400E1DD70 /* controllers */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -197,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				818BDBF81C80E8D40085A0BE /* My_members+CoreDataProperties.swift */,
+				81B7A47F1CD14DB40015F7C0 /* Credits+CoreDataProperties.swift */,
+				81B7A4801CD14DB40015F7C0 /* Credits.swift */,
 				818BDBFC1C80EA8F0085A0BE /* members.swift */,
 				818BDBF91C80E8D40085A0BE /* My_members.swift */,
 				8172CF1A1CB597CD00172F54 /* crons.swift */,
@@ -259,6 +267,11 @@
 					81072FAC1C7BE1D400E1DD70 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 5Z8C2NPWCK;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -376,7 +389,9 @@
 				3BC37B471C948F5A00C0B9E7 /* Query.swift in Sources */,
 				810F03191C99DE0300D6BD01 /* const.swift in Sources */,
 				81072FB11C7BE1D400E1DD70 /* AppDelegate.swift in Sources */,
+				81B7A4811CD14DB40015F7C0 /* Credits+CoreDataProperties.swift in Sources */,
 				814C6D9A1CB973EB0093DDF1 /* AddCronVC.swift in Sources */,
+				81B7A4821CD14DB40015F7C0 /* Credits.swift in Sources */,
 				3BC37B4E1C948F5A00C0B9E7 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,11 +506,12 @@
 			baseConfigurationReference = F6218B6C9976D8938CBA1E10 /* Pods-smsrealtors.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_ENTITLEMENTS = smsrealtors/smsrealtors.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = smsrealtors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.ourweb.smsrealtors;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ourweb.smsrealtors1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -506,11 +522,12 @@
 			baseConfigurationReference = DED6424AC97AB804D98C861A /* Pods-smsrealtors.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_ENTITLEMENTS = smsrealtors/smsrealtors.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				INFOPLIST_FILE = smsrealtors/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.ourweb.smsrealtors;
+				PRODUCT_BUNDLE_IDENTIFIER = net.ourweb.smsrealtors1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -546,8 +563,7 @@
 				81072FB81C7BE1D400E1DD70 /* smsrealtors.xcdatamodel */,
 			);
 			currentVersion = 81072FB81C7BE1D400E1DD70 /* smsrealtors.xcdatamodel */;
-			name = smsrealtors.xcdatamodeld;
-			path = smsrealtors/smsrealtors.xcdatamodeld;
+			path = smsrealtors.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
