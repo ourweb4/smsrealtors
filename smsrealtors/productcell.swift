@@ -10,13 +10,21 @@ import UIKit
 import StoreKit
 
 class productcell: UITableViewCell {
-
+    
+    
+    @IBOutlet var titleLBL: UILabel!
+    
+    @IBOutlet var priceLBL: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func ConfigureCell(pdata: SKProduct) {
+    func ConfigureCell(title: String, price: String) {
+        
+        self.titleLBL.text = "\(title)"
+        self.priceLBL.text = "\(price)"
         
     }
 

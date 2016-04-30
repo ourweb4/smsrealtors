@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import StoreKit
 
-class BuyVC: UIViewController, SKProductsRequestDelegate, UITableViewDelegate, UITableViewDataSource {
+class BuyVC: UIViewController, SKProductsRequestDelegate, UITableViewDelegate, UITableViewDataSource, SKPaymentTransactionObserver {
 
     
     var creditslist = [Credits]()
@@ -63,13 +63,15 @@ class BuyVC: UIViewController, SKProductsRequestDelegate, UITableViewDelegate, U
         
         
     }
-    
+
     func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
         
         
-        print("Number of Products:  \(response.products.count)")
+   //     print("Number of Products:  \(response.products.count)")
         
         products = response.products
+        
+        //print( products[0].localizedTitle)
         
         tableview.reloadData()
     }
@@ -84,17 +86,75 @@ class BuyVC: UIViewController, SKProductsRequestDelegate, UITableViewDelegate, U
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        let title = products[indexPath.row].localizedTitle
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        formatter.locale = products[indexPath.row].priceLocale
+        
+        let cost = products[indexPath.row].price
+        
+        let price = formatter.stringFromNumber(cost)!
+        
         if let cell = tableview.dequeueReusableCellWithIdentifier("productcell") as? productcell {
-            cell.ConfigureCell(products[indexPath.row])
+            
+            cell.ConfigureCell(title, price: price)
             return cell
         }  else {
             let  cell = productcell()
-            cell.ConfigureCell(products[indexPath.row])
+ cell.ConfigureCell(title, price: price)
             return cell
         }
         
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let buyproduct = products[indexPath.row]
+        
+        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
+        let payment = SKPayment(product: buyproduct)
+        SKPaymentQueue.defaultQueue().addPayment(payment)
+        
+        
+    }
+    
+    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        
+        for trans in transactions {
+            
+            switch trans.transactionState {
+            case .Purchased :
+                
+                givecredits(trans.payment.productIdentifier)
+                SKPaymentQueue.defaultQueue().finishTransaction(trans)
+                
+                break
+            case .Deferred :
+                break
+                
+            case .Failed :
+                SKPaymentQueue.defaultQueue().finishTransaction(trans)
+                break
+            case.Purchasing :
+                
+                break
+            case .Restored :
+                SKPaymentQueue.defaultQueue().finishTransaction(trans)
+                break
+            }
+            
+        }
+    }
+   
+    func givecredits(product_id: String) {
+        
+        for cr in self.creditslist {
+            if cr.product_id == product_id {
+                
+                userdata.updatecredits(cr.credits!.integerValue)
+            }
+        }
+    }
     
     func showerror(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
