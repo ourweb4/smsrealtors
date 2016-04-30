@@ -193,9 +193,9 @@
 		81072FC61C7BE45400E1DD70 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				814C6D991CB973EB0093DDF1 /* AddCronVC.swift */,
 				8173F4C31C7E91A1008DE327 /* loginVC.swift */,
 				81072FB21C7BE1D400E1DD70 /* ViewController.swift */,
+				814C6D991CB973EB0093DDF1 /* AddCronVC.swift */,
 				8108EE931C9AF59B007BA3D1 /* memberVC.swift */,
 				81EEE8FC1C9DA7370002C2F7 /* registerVC.swift */,
 				8113F97A1CA9628700A2DDA0 /* SmsmemberVC.swift */,

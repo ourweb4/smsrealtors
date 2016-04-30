@@ -149,7 +149,7 @@ class BuyVC: UIViewController, SKProductsRequestDelegate, UITableViewDelegate, U
     func givecredits(product_id: String) {
         
         for cr in self.creditslist {
-            if cr.product_id == product_id {
+            if cr.product_id! == product_id {
                 
                 userdata.updatecredits(cr.credits!.integerValue)
             }
